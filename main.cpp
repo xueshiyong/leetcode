@@ -6,9 +6,8 @@
 #include "Math_fun/math_fun.h"
 
 int main() {
-    cout << "testing mode: " << endl;
-    vector<int> arr = {1, 3, 2, 5, 4, 2, 6};
-    vector<int> temp_arr = next_max_value(arr);
-    PrintSort(temp_arr);
+    vector<int> arr = {4, 2, 5, 1, 6, 7, 3};
+    TreeNode *root = CreateBiTree(arr, 0);
+    Inorder(root);
 }
 

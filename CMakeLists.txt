@@ -8,4 +8,4 @@ include_directories(.)
 add_executable(leetcode
         func.h
         main.cpp
-        myvector.cpp mystring.cpp Math_fun/math_fun.h Math_fun/mymath.cpp BackSearch/back_search.cpp Mat/My_Mat.cpp Greedy/greedy.cpp Sort/sort.cpp monotonic_stack/mono_stack.cpp)
+        myvector.cpp mystring.cpp Math_fun/math_fun.h Math_fun/mymath.cpp BackSearch/back_search.cpp Mat/My_Mat.cpp Greedy/greedy.cpp Sort/sort.cpp monotonic_stack/mono_stack.cpp Tree/tree.cpp)

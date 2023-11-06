@@ -15,6 +15,29 @@
 #include <queue>
 using namespace std;
 
+struct ListNode{
+    int val;
+    ListNode *next, *prev;
+    ListNode(){}
+    ListNode(int x):val(x), next(nullptr), prev(nullptr){}
+};
+
+struct TreeNode{
+    int val;
+    TreeNode *left, *right;
+    TreeNode(){}
+    TreeNode(int x):val(x), left(nullptr), right(nullptr){}
+};
+
+void InsertTreeNode(TreeNode *&root, int x);
+TreeNode *CreateSearchTree(vector<int> &arr);
+TreeNode *CreateBiTree(vector<int> &arr, int index);
+
+// 中序输出树
+void Inorder(TreeNode *root);
+
+
+
 typedef vector<vector<char>> char_Martix;
 typedef vector<vector<double>> Martix;
 typedef vector<double> Vector;
