@@ -13,7 +13,7 @@ vector<int> next_max_value(vector<int> &arr){
             st.push(i);
         }
         else{
-            while (!st.empty()){
+            while (!st.empty() and arr[i] > arr[st.top()]){
                 int index = st.top();
                 st.pop();
                 temp_arr[index] = arr[i];
@@ -24,7 +24,27 @@ vector<int> next_max_value(vector<int> &arr){
     return temp_arr;
 } // 下一个最大值
 
+vector<int> next_circle_max_value(vector<int> &arr){
+    int size = arr.size();
+    stack<int> st;
+    st.push(0);
+    vector<int> temp_arr(arr.size(), -1);
 
+    for (int i = 1; i < 2 * size; i++){
+        if (arr[i % size] <= arr[st.top()]){
+            st.push(i % size);
+        }
+        else{
+            while (!st.empty() and arr[i % size] > arr[st.top()]){
+                int index = st.top();
+                st.pop();
+                temp_arr[index] = arr[i % size];
+            }
+            st.push(i % size);
+        }
+    }
+    return temp_arr;
+}
 
 // 接雨水的方法
 

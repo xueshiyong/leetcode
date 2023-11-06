@@ -94,6 +94,6 @@ void PrintSort(vector<int> &arr);
 // 单调栈
 int rainy(vector<int> &arr);
 vector<int> next_max_value(vector<int> &arr); // 下一个最大值
-
+vector<int> next_circle_max_value(vector<int> &arr);
 
 #endif //LEETCODE_FUNC_H
