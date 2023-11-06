@@ -6,6 +6,8 @@
 #include "Math_fun/math_fun.h"
 
 int main(){
-    vector<int> path = {4, 3, 1, 5};
-    cout << jump_game(path) << endl;
+    vector<int> arr = {220, 221, 453, 435, 342, 101, 110, 567, 524, 511, 604, 603, 605};
+    BucketSort(arr);
+    PrintSort(arr);
 }
+

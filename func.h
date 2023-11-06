@@ -70,14 +70,20 @@ int allocate_cookies(vector<int> children, vector<int> cookies);
 bool jump_game(vector<int> &path);
 
 // 排序算法
-void BobbleSort(vector<int> &arr);
-void InsertSort(vector<int> &arr);
-void SelectSort(vector<int> &arr);
-void QuickSort(vector<int> &arr, int start, int end);
+void BobbleSort(vector<int> &arr); // 1
+void InsertSort(vector<int> &arr); // 2
+void SelectSort(vector<int> &arr); // 3
+void QuickSort(vector<int> &arr, int start, int end); // 4
 
 void merge(vector<int> &arr, int start, int mid, int end);
-void MergeSort(vector<int> &arr, int start, int end);
-void HeapSort(vector<int> &arr);
+void MergeSort(vector<int> &arr, int start, int end); // 5
+void HeapSort(vector<int> &arr); //6
+void ShellSort(vector<int> &arr); // 7
+void BucketSort(vector<int> &arr); // 8
+void CountSort(vector<int> &arr); // 9 计数排序
+void BaseSort(vector<int> &arr); // 10 基数排序
+
+void PrintSort(vector<int> &arr);
 
 
 #endif //LEETCODE_FUNC_H
