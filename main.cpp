@@ -5,9 +5,10 @@
 #include "func.h"
 #include "Math_fun/math_fun.h"
 
-int main(){
-    vector<int> arr = {220, 221, 453, 435, 342, 101, 110, 567, 524, 511, 604, 603, 605};
-    BucketSort(arr);
-    PrintSort(arr);
+int main() {
+    cout << "testing mode: " << endl;
+    vector<int> arr = {1, 3, 2, 5, 4, 2, 6};
+    vector<int> temp_arr = next_max_value(arr);
+    PrintSort(temp_arr);
 }
 

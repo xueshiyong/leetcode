@@ -64,6 +64,12 @@ void back_track_son_string_num(int &num, string s, int startIndex, vector<string
 // 回溯算法
 bool IsValid(int row, int col, char_Martix chess);
 void Queen(char_Martix &chess, int row, int n, vector<char_Martix> &res);
+void max_len_of_sub_son(string &s, int &max_len, int startIndex, vector<string> &path, vector<vector<string>> &res); // 回溯算法子集
+
+
+
+void Print_vec_string(vector<string> &path);
+void Print_two_vec_string(vector<vector<string>> &res);
 
 // 贪婪算法
 int allocate_cookies(vector<int> children, vector<int> cookies);
@@ -84,6 +90,10 @@ void CountSort(vector<int> &arr); // 9 计数排序
 void BaseSort(vector<int> &arr); // 10 基数排序
 
 void PrintSort(vector<int> &arr);
+
+// 单调栈
+int rainy(vector<int> &arr);
+vector<int> next_max_value(vector<int> &arr); // 下一个最大值
 
 
 #endif //LEETCODE_FUNC_H
