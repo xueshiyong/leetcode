@@ -64,3 +64,53 @@ void Inorder(TreeNode *root){
     cout << root->val << " ";
     Inorder(root->right);
 }
+
+
+void leverorder(TreeNode *root){
+    if (root == nullptr){
+        return;
+    }
+
+    queue<TreeNode *> que;
+    que.push(root);
+
+    while (!que.empty()){
+        int size = que.size();
+        for (int i = 0; i < size; i++){
+            TreeNode *node = que.front();
+            que.pop();
+            cout << node->val << " ";
+            if (node->left){
+                que.push(node->left);
+            }
+
+            if (node->right){
+                que.push(node->right);
+            }
+        }
+        cout << endl;
+    }
+}
+
+
+void preorderval(TreeNode *root){
+    stack<TreeNode *> st;
+    if (root == nullptr){
+        return;
+    }
+    st.push(root);
+
+    while (!st.empty()){
+        TreeNode *node = st.top();
+        st.pop();
+        cout << node->val << " ";
+        if (node->left){
+            st.push(node->left);
+        }
+
+        if (node->right){
+            st.push(node->right);
+        }
+    }
+}
+

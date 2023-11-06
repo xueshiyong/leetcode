@@ -35,6 +35,22 @@ TreeNode *CreateBiTree(vector<int> &arr, int index);
 
 // 中序输出树
 void Inorder(TreeNode *root);
+// 层序输出树
+void leverorder(TreeNode *root);
+// 栈输出树
+void preorderval(TreeNode *root);
+void preorder_travesal(TreeNode *root);
+
+
+// 链表相关函数
+ListNode *CreateList(vector<int> &arr);
+ListNode *add_list(ListNode *head, ListNode *node, int pos); //链表添加新的节点
+ListNode *find_list(ListNode *head, int pos); // 查找链表的节点
+ListNode *delete_list(ListNode *head, int pos); // 删除指定位置的节点
+ListNode *change_list(ListNode *head, ListNode *node, int pos); // 修改指定位置的节点
+
+
+void PrintList(ListNode *head);
 
 
 
