@@ -27,19 +27,14 @@ int allocate_cookies(vector<int> children, vector<int> cookies){ // 能偶满足
 
 }
 
-bool jump_game(vector<int> path){
-    int start = 0;
+bool jump_game(vector<int> &path){
     int cover = 0 + path[0];
-    for (int i = start; i <= cover; i++){
-        int cur_cover = i + path[i];
-        if (cur_cover >= path.size() - 1){
+
+    for (int i = 1; i < cover; i++){
+        cover = max(cover, i + path[i]);
+        if (cover >= path.size() - 1){
             return true;
-        }
-        if (cur_cover >= cover){
-            start = i;
-            cover = cur_cover;
         }
     }
     return false;
 }
-

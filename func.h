@@ -65,7 +65,19 @@ void back_track_son_string_num(int &num, string s, int startIndex, vector<string
 bool IsValid(int row, int col, char_Martix chess);
 void Queen(char_Martix &chess, int row, int n, vector<char_Martix> &res);
 
-
+// 贪婪算法
 int allocate_cookies(vector<int> children, vector<int> cookies);
-bool jump_game(vector<int> path);
+bool jump_game(vector<int> &path);
+
+// 排序算法
+void BobbleSort(vector<int> &arr);
+void InsertSort(vector<int> &arr);
+void SelectSort(vector<int> &arr);
+void QuickSort(vector<int> &arr, int start, int end);
+
+void merge(vector<int> &arr, int start, int mid, int end);
+void MergeSort(vector<int> &arr, int start, int end);
+void HeapSort(vector<int> &arr);
+
+
 #endif //LEETCODE_FUNC_H

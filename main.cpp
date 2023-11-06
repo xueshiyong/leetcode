@@ -6,6 +6,6 @@
 #include "Math_fun/math_fun.h"
 
 int main(){
-    vector<int> path = {4, 3, 1, 0, 0, 5};
+    vector<int> path = {4, 3, 1, 5};
     cout << jump_game(path) << endl;
 }
