@@ -1,0 +1,11 @@
+cmake_minimum_required(VERSION 3.24)
+project(leetcode)
+
+set(CMAKE_CXX_STANDARD 14)
+
+include_directories(.)
+
+add_executable(leetcode
+        func.h
+        main.cpp
+        myvector.cpp mystring.cpp Math_fun/math_fun.h Math_fun/mymath.cpp BackSearch/back_search.cpp Mat/My_Mat.cpp Greedy/greedy.cpp)
