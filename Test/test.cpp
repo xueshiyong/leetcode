@@ -4,15 +4,27 @@
 #include "func.h"
 
 void testing_list(){
+    cout << "testing list: " << endl;
     vector<int> arr = {4, 2, 1, 5, 6, 3};
     ListNode *head = CreateList(arr);
     cout << "head: " << head->val << endl;
     ListNode *tail = get_tail(head);
     cout << "tail: " << tail->val << endl;
 
-    PrintList(head);
-    head = reverse_list(head);
-    PrintList(head);
+//    PrintList(head);
+//    head = reverse_list(head);
+//    PrintList(head);
+//
+
+    ListNode *node2 = new ListNode(4);
+    ListNode *node1 = new ListNode(3);
+    node1->next = node2;
+    node2->next = head;
+
+    cout << "cross node: " << list_cross_node(head, node1)->val << endl;
+
+
+
 
 }
 

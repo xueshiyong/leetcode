@@ -280,3 +280,33 @@ ListNode *reverse_list(ListNode *head){
     return prev;
 } // 链表翻转
 
+
+ListNode *list_cross_node(ListNode *head1, ListNode *head2) {
+    int len1 = length_of_list(head1);
+    int len2 = length_of_list(head2);
+
+    if (len1 < len2){
+        swap(head1, head2);
+        swap(len1, len2);
+    }
+
+    int gap_len = len1 - len2;
+    int i = 0;
+    while (i < gap_len){
+        head1 = head1->next;
+        i++;
+    }
+
+    ListNode *cur1 = head1;
+    ListNode *cur2 = head2;
+
+    while (cur1){
+        if (cur1 == cur2){
+            return cur1;
+        }
+        cur1 = cur1->next;
+        cur2 = cur2->next;
+    }
+
+    return nullptr;
+}

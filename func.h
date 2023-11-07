@@ -74,6 +74,7 @@ ListNode *last_k_list(ListNode *head, int k);
 ListNode *get_tail(ListNode *head);
 ListNode *two_sum_of_list(ListNode *head1, ListNode *head2);
 ListNode *reverse_list(ListNode *head);
+ListNode *list_cross_node(ListNode *head1, ListNode *head2);
 
 // 矩阵算法题目
 typedef vector<vector<char>> char_Martix;
