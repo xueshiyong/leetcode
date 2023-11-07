@@ -30,4 +30,48 @@ void test_dynamic(){
     int n = 10;
     cout << "febi: " << Febi(n) << endl;
     cout << "febi_dp: " << Febi_dp(n) << endl;
+
+    vector<int> weights = {1, 3, 4};
+    vector<int> prices = {10, 15, 20};
+    int Volume = 4;
+
+    cout << "max_prices: " << V_bags(weights, prices, Volume) << endl;
+    cout << "max_prices_two: " << V_bags_two(weights, prices, Volume) << endl;
+
+    vector<int> stones = {1, 1, 3, 4, 11};
+    cout << "min_left_stone: " << left_min_stone(stones) << endl;
+
+    vector<int> arr = {1, 1, 1, 1, 1};
+    int target = 2;
+    cout << "Valid operator: " << IsValidOperator(arr, target) << endl;
+
+    cout << "split max multiply: " << split_max_int(9) << endl;
+
+    vector<int> sum_arr = {4, 2, 1, 5, 2};
+    cout << two_sum(sum_arr, 9).first << " " << two_sum(sum_arr, 9).second << endl;
+
+    vector<vector<int>> res;
+    vector<int> temp_arr = {5, 6, 7, 1, 2, 3, 4};
+    res = Three_sum(temp_arr, 9);
+    Print_two_vec_int(res);
+
+}
+
+void test_vector(){
+    vector<int> arr = {6, 8, 10, 11, 12};
+    int target = 8;
+    cout << binary_search(arr, target) << endl;
+
+    vector<int> temp_arr = {1, 2, 2, 2, 2, 4, 5, 6, 7};
+    cout << "before size: " << temp_arr.size() << endl;
+    cout << "after size: " << removeVal(temp_arr, 2) << endl;
+
+    vector<int> temp_arr1 = {-2, -1, 0, 1, 2, 3};
+    vector<int> res = square_of_nums(temp_arr1);
+    Print_vec_int(res);
+
+    vector<int> temp_arr2 = {2, 3, 1, 2, 4, 3};
+    cout << "min_len_arr: " << min_len_arr(temp_arr2, 9) << endl;
+
+
 }

@@ -87,7 +87,7 @@ int V_bags(vector<int> &weights, vector<int> &prices, int Volume){
         dp[0][j] = prices[0];
     }
 
-    for (int i = 0; i < size; i++){
+    for (int i = 1; i < size; i++){
         for (int j = 0; j <= Volume; j++){
             if (j >= weights[i]){
                 dp[i][j] = max(dp[i-1][j], dp[i-1][j - weights[i]] + prices[i]);
@@ -99,3 +99,76 @@ int V_bags(vector<int> &weights, vector<int> &prices, int Volume){
     }
     return dp[size - 1][Volume];
 }
+
+int V_bags_two(vector<int> &weights, vector<int> &prices, int Volume) {
+    int size = weights.size();
+    vector<int> dp(Volume + 1, 0);
+
+    for (int i = 0; i < size; i++) {
+        for (int j = Volume; j >= weights[i]; j--) {
+            dp[j] = max(dp[j], dp[j - weights[i]] + prices[i]);
+        }
+    }
+    return dp[Volume];
+}
+
+int left_min_stone(vector<int> &stones){
+    int sum = 0;
+    for (int i = 0; i < stones.size(); i++){
+        sum += stones[i];
+    }
+    int size = stones.size();
+
+    QuickSort(stones, 0, stones.size() - 1);
+    int target = sum / 2;
+    vector<int> dp(target + 1, 0);
+
+    for (int i = 0; i < size; i++){
+        for (int j = target; j >= stones[i]; j--){
+            dp[j] = max(dp[j-1], dp[j - stones[i]] + stones[i]);
+        }
+    }
+
+    return sum - 2 * dp[target];
+}
+
+bool IsValidOperator(vector<int> &arr, int target){
+    int size = arr.size();
+    int sum = 0;
+    for (int i = 0; i < size; i++){
+        sum += arr[i];
+    }
+
+    int V = sum + target;
+    if (V % 2 == 1 or target > sum){
+        return false;
+    }
+    vector<int> dp(V / 2 + 1, 0);
+    QuickSort(arr, 0, arr.size() - 1);
+    for (int i = 0; i < arr.size(); i++) {
+        for (int j = V / 2; j >= arr[i]; j--) {
+            dp[j] = max(dp[j - 1], dp[j - arr[i]] + arr[i]);
+        }
+
+    }
+    if (dp[V / 2] == V / 2){
+        return true;
+    }
+    return false;
+
+}
+
+int split_max_int(int n){
+    vector<int> dp(n + 1, 0);
+    dp[2] = 1;
+
+    for (int i = 3; i <= n; i++){
+        for (int j = 1; j < i - 1; j++){
+            dp[i] = max(dp[i], max(j * (i - j), j * dp[i - j]));
+        }
+    }
+    return dp[n];
+}
+
+
+

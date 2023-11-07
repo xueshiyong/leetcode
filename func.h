@@ -13,6 +13,8 @@
 #include <cmath>
 #include <stack>
 #include <queue>
+#include <unordered_set>
+#include <unordered_map>
 using namespace std;
 
 struct ListNode{
@@ -30,8 +32,13 @@ struct TreeNode{
     TreeNode(int x):val(x), left(nullptr), right(nullptr){}
 }; // 实现树的节点，树节点内容可以自定义
 
-
-
+// 数组
+pair<int, int> two_sum(vector<int> &arr, int target);
+vector<vector<int>> Three_sum(vector<int> &arr, int target);
+int binary_search(vector<int> &arr, int target);
+int removeVal(vector<int> &arr, int val);
+vector<int> square_of_nums(vector<int> &arr);
+int min_len_arr(vector<int> &arr, int target);
 // 创建树
 void InsertTreeNode(TreeNode *&root, int x);
 TreeNode *CreateSearchTree(vector<int> &arr);
@@ -49,6 +56,7 @@ void preorder_travesal(TreeNode *root);
 void testing_list();
 void testing_back_search();
 void test_dynamic();
+void test_vector();
 // 单向链表相关函数
 ListNode *CreateList(vector<int> &arr);
 ListNode *add_list(ListNode *head, ListNode *node, int pos); //链表添加新的节点
@@ -152,6 +160,10 @@ int map_obstacle_path(vector<vector<int>> &map, vector<vector<int>> &obstacles);
 int Febi(int n);
 int Febi_dp(int n);
 int V_bags(vector<int> &weights, vector<int> &prices, int Volume);
+int V_bags_two(vector<int> &weights, vector<int> &prices, int Volume);
+int left_min_stone(vector<int> &stones);
+bool IsValidOperator(vector<int> &arr, int target);
+int split_max_int(int n);
 
 
 // 输出

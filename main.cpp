@@ -7,5 +7,5 @@
 
 int main(){
     cout << "hello world. " << endl;
-    test_dynamic();
+    test_vector();
 }
