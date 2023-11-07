@@ -130,7 +130,7 @@ Martix vec_to_mat(Vector vec, int single_shape, int axis){ //axis = 0表示的�
         return mat;
     }
 
-    if (axis == 1){
+    else {
         int rows = vec.size() / single_shape;
         Martix mat(rows, Vector(single_shape, 0));
         int i = 0;

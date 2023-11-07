@@ -30,6 +30,9 @@ struct TreeNode{
     TreeNode(int x):val(x), left(nullptr), right(nullptr){}
 }; // 实现树的节点，树节点内容可以自定义
 
+
+
+// 创建树
 void InsertTreeNode(TreeNode *&root, int x);
 TreeNode *CreateSearchTree(vector<int> &arr);
 TreeNode *CreateBiTree(vector<int> &arr, int index);
@@ -42,8 +45,10 @@ void leverorder(TreeNode *root);
 void preorderval(TreeNode *root);
 void preorder_travesal(TreeNode *root);
 
-
+// 测试函数
 void testing_list();
+void testing_back_search();
+void test_dynamic();
 // 单向链表相关函数
 ListNode *CreateList(vector<int> &arr);
 ListNode *add_list(ListNode *head, ListNode *node, int pos); //链表添加新的节点
@@ -55,23 +60,14 @@ int length_of_list(ListNode *head); // 链表的长度
 // 循环链表相关函数
 ListNode *CreateCircleList(vector<int> &arr);
 ListNode *CrossIndexList(ListNode *head);
-void PrintCircleList(ListNode *head);
-
 bool IsCircleList(ListNode *head);
-
-
 // 链表题目
 ListNode *last_k_list(ListNode *head, int k);
 ListNode *get_tail(ListNode *head);
 ListNode *two_sum_of_list(ListNode *head1, ListNode *head2);
 ListNode *reverse_list(ListNode *head);
 
-void PrintList(ListNode *head);
-
-
-
-
-
+// 矩阵算法题目
 typedef vector<vector<char>> char_Martix;
 typedef vector<vector<double>> Martix;
 typedef vector<double> Vector;
@@ -108,8 +104,6 @@ double mat_det(Martix mat);
 void PrintMartix(Martix mat);
 void PrintVec(Vector vec);
 
-
-
 int max_Volume(vector<int> heights);
 bool IsPanic(string s, int start, int end);
 void back_track_string(int &max_len, string s, int startIndex, vector<string> &path, vector<vector<string>>&res);
@@ -119,14 +113,13 @@ string my_pow(int base, int index);
 void back_track_son_string_num(int &num, string s, int startIndex, vector<string> &path, vector<vector<string>> &res);
 
 // 回溯算法
+void back_combination_digits(string s, int startIndex, vector<char> &path, vector<vector<char>> &res);
 bool IsValid(int row, int col, char_Martix chess);
 void Queen(char_Martix &chess, int row, int n, vector<char_Martix> &res);
-void max_len_of_sub_son(string &s, int &max_len, int startIndex, vector<string> &path, vector<vector<string>> &res); // 回溯算法子集
+void max_len_of_sub_son(string &s, int &max_len, int startIndex, vector<string> &path, vector<vector<string>> &res);
+void back_track_son_arr(vector<int> &arr, int k, int startIndex, vector<int> &path, vector<vector<int>> &res);
+void back_track_arange_arr(vector<int> arr, int k, vector<int> &used, vector<int> &path, vector<vector<int>> &res);
 
-
-
-void Print_vec_string(vector<string> &path);
-void Print_two_vec_string(vector<vector<string>> &res);
 
 // 贪婪算法
 int allocate_cookies(vector<int> children, vector<int> cookies);
@@ -152,5 +145,23 @@ void PrintSort(vector<int> &arr);
 int rainy(vector<int> &arr);
 vector<int> next_max_value(vector<int> &arr); // 下一个最大值
 vector<int> next_circle_max_value(vector<int> &arr);
+
+// 动态规划
+int map_path(int rows, int cols);
+int map_obstacle_path(vector<vector<int>> &map, vector<vector<int>> &obstacles);
+int Febi(int n);
+int Febi_dp(int n);
+int V_bags(vector<int> &weights, vector<int> &prices, int Volume);
+
+
+// 输出
+void PrintCircleList(ListNode *head);
+void PrintList(ListNode *head);
+void Print_vec_char(vector<char> &path);
+void Print_two_vec_char(vector<vector<char>> &res);
+void Print_vec_string(vector<string> &path);
+void Print_two_vec_string(vector<vector<string>> &res);
+void Print_vec_int(vector<int> &path);
+void Print_two_vec_int(vector<vector<int>> &res);
 
 #endif //LEETCODE_FUNC_H

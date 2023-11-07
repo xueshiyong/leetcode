@@ -5,9 +5,7 @@
 #include "func.h"
 #include "Math_fun/math_fun.h"
 
-int main() {
-    testing_list();
-
-
+int main(){
+    cout << "hello world. " << endl;
+    test_dynamic();
 }
-
