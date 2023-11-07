@@ -3,6 +3,7 @@
 //
 #include "func.h"
 
+
 ListNode *CreateList(vector<int> &arr){
     ListNode *head = nullptr;
     ListNode *temp = nullptr;
@@ -12,11 +13,11 @@ ListNode *CreateList(vector<int> &arr){
         node = new ListNode(arr[i]);
         if (head == nullptr){
             head = node;
-            head->prev = nullptr;
+//            head->prev = nullptr;
         }
         else{
             temp->next = node;
-            node->prev = temp;
+//            node->prev = temp;
         }
 
         temp = node;
@@ -101,6 +102,99 @@ ListNode *change_list(ListNode *head, ListNode *node, int pos){
     return head;
 }
 
+
+ListNode *last_k_list(ListNode *head, int k){
+    ListNode *cur = head;
+    ListNode *prev = head;
+
+    int i = 0;
+    while (i < k){
+        cur = cur->next;
+        i++;
+    }
+
+    while (cur != nullptr){
+        cur = cur->next;
+        prev = prev->next;
+    }
+
+    return prev;
+}
+
+ListNode *get_tail(ListNode *head){
+    return last_k_list(head, 1);
+}
+
+int length_of_list(ListNode *head){
+    int i = 0;
+    ListNode *cur = head;
+
+    while (cur != nullptr){
+        i++;
+        cur = cur->next;
+    }
+    return i;
+}
+
+ListNode *two_sum_of_list(ListNode *head1, ListNode *head2){
+    if (length_of_list(head1) < length_of_list(head2)){
+        swap(head1, head2);
+    }
+
+    ListNode *cur1 = head1;
+    ListNode *cur2 = head2;
+
+    ListNode *prev1 = nullptr;
+    ListNode *prev2 = nullptr;
+
+    int c1 = 0;
+    while (cur2 != nullptr) {
+        int temp = cur1->val + cur2->val + c1;
+        c1 = temp / 10;
+        cur1->val = temp % 10;
+
+        prev1 = cur1;
+        prev2 = cur2;
+
+        cur1 = cur1->next;
+        cur2 = cur2->next;
+    }
+
+    if (cur1 == nullptr){
+        if (c1 != 0){
+            ListNode *temp_node = new ListNode(c1);
+            prev1->next = temp_node;
+            return head1;
+        }
+        else{
+            return head2;
+        }
+
+    }
+    else{
+        while (cur1 != nullptr){
+            int temp = cur1->val + c1;
+            c1 = temp / 10;
+            cur1->val = temp % 10;
+
+            prev1 = cur1;
+            cur1 = cur1->next;
+        }
+
+        if (c1 == 0){
+            return head1;
+        }
+        else{
+            ListNode *temp_node = new ListNode(c1);
+            prev1->next = temp_node;
+            return head1;
+        }
+
+
+    }
+
+}
+
 void PrintList(ListNode *head){
     ListNode *cur = head;
     while (cur){
@@ -108,5 +202,41 @@ void PrintList(ListNode *head){
         cur = cur->next;
     }
     cout << endl;
+}
 
+
+ListNode *CreateCircleList(vector<int> &arr){
+    ListNode *head = CreateList(arr); // 创建单向链表
+    ListNode *tail = get_tail(head);
+    tail->next = head;
+    return head;
+}
+
+void PrintCircleList(ListNode *head){
+    ListNode *cur = head;
+
+    while (cur->next != head){
+        cout << cur->val << " ";
+        cur = cur->next;
+    }
+    cout << cur->val;
+    cout << endl;
+}
+
+bool IsCircleList(ListNode *head){
+    ListNode *fast = head;
+    ListNode *slow = head;
+
+    fast = fast->next->next;
+    slow = slow->next;
+
+    while (fast != slow) {
+        fast = fast->next->next;
+        slow = slow->next;
+        if (fast == nullptr){
+            return false;
+        }
+    }
+
+    return true;
 }

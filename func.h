@@ -17,17 +17,18 @@ using namespace std;
 
 struct ListNode{
     int val;
+//    string str;
     ListNode *next, *prev;
     ListNode(){}
     ListNode(int x):val(x), next(nullptr), prev(nullptr){}
-};
+}; // 实现链表节点，链表节点内容可以自定义
 
 struct TreeNode{
     int val;
     TreeNode *left, *right;
     TreeNode(){}
     TreeNode(int x):val(x), left(nullptr), right(nullptr){}
-};
+}; // 实现树的节点，树节点内容可以自定义
 
 void InsertTreeNode(TreeNode *&root, int x);
 TreeNode *CreateSearchTree(vector<int> &arr);
@@ -42,15 +43,31 @@ void preorderval(TreeNode *root);
 void preorder_travesal(TreeNode *root);
 
 
-// 链表相关函数
+void testing_list();
+// 单向链表相关函数
 ListNode *CreateList(vector<int> &arr);
 ListNode *add_list(ListNode *head, ListNode *node, int pos); //链表添加新的节点
 ListNode *find_list(ListNode *head, int pos); // 查找链表的节点
 ListNode *delete_list(ListNode *head, int pos); // 删除指定位置的节点
 ListNode *change_list(ListNode *head, ListNode *node, int pos); // 修改指定位置的节点
+int length_of_list(ListNode *head); // 链表的长度
+
+// 循环链表相关函数
+ListNode *CreateCircleList(vector<int> &arr);
+void PrintCircleList(ListNode *head);
+
+bool IsCircleList(ListNode *head);
+
+
+// 链表题目
+ListNode *last_k_list(ListNode *head, int k);
+ListNode *get_tail(ListNode *head);
+ListNode *two_sum_of_list(ListNode *head1, ListNode *head2);
 
 
 void PrintList(ListNode *head);
+
+
 
 
 
