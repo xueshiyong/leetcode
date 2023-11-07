@@ -10,5 +10,9 @@ void testing_list(){
     ListNode *tail = get_tail(head);
     cout << "tail: " << tail->val << endl;
 
+    PrintList(head);
+    head = reverse_list(head);
+    PrintList(head);
+
 
 }

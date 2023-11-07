@@ -54,6 +54,7 @@ int length_of_list(ListNode *head); // 链表的长度
 
 // 循环链表相关函数
 ListNode *CreateCircleList(vector<int> &arr);
+ListNode *CrossIndexList(ListNode *head);
 void PrintCircleList(ListNode *head);
 
 bool IsCircleList(ListNode *head);
@@ -63,7 +64,7 @@ bool IsCircleList(ListNode *head);
 ListNode *last_k_list(ListNode *head, int k);
 ListNode *get_tail(ListNode *head);
 ListNode *two_sum_of_list(ListNode *head1, ListNode *head2);
-
+ListNode *reverse_list(ListNode *head);
 
 void PrintList(ListNode *head);
 

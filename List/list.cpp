@@ -240,3 +240,42 @@ bool IsCircleList(ListNode *head){
 
     return true;
 }
+
+ListNode *CrossIndexList(ListNode *head){
+    ListNode *fast = head;
+    ListNode *slow = head;
+
+    while (fast != nullptr) {
+        fast = fast->next->next;
+        slow = slow->next;
+
+        if (fast == slow){
+            ListNode *index1 = slow;
+            ListNode *index2 = head;
+
+            while (index1 != index2){
+                index1 = index1->next;
+                index2 = index2->next;
+                if (index1 == slow){
+                    return nullptr;
+                }
+            }
+            return index1;
+        }
+    }
+}
+
+ListNode *reverse_list(ListNode *head){
+    ListNode *cur = head;
+    ListNode *prev = nullptr;
+    ListNode *temp = nullptr;
+
+    while (cur != nullptr){
+        temp = cur->next;
+        cur->next = prev;
+
+        prev = cur;
+        cur = temp;
+    }
+    return prev;
+} // 链表翻转
