@@ -9,5 +9,7 @@ int main(){
     cout << "hello world. " << endl;
 //    test_vector();
 //    testing_list();
-    test_hash();
+//    test_hash();
+//    test_stack();
+    test_tree();
 }

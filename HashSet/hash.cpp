@@ -74,3 +74,26 @@ bool isHappy(int n){
     return true;
 
 }
+
+bool magezines(string str1, string str2){
+    vector<int> hash(128, 0);
+    int len1 = str1.size();
+    int len2 = str2.size();
+
+    for (int i = 0; i < len2; i++){
+        int index = str2[i] - 'A';
+        hash[index]++;
+    }
+
+    for (int i = 0; i < len1; i++){
+        int index = str1[i] - 'A';
+        hash[index]--;
+    }
+
+    for (int index = 0; index < 128; index++){
+        if (hash[index] < 0){
+            return false;
+        }
+    }
+    return true;
+}

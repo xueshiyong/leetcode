@@ -42,6 +42,26 @@ void test_hash(){
     cout << "sum bits: " << sum_bits(82) << endl;
     int n = 19;
     cout << "Is happy? " << isHappy(n) << endl;
+
+    string str1 = "aab";
+    string str2 = "abcd";
+    cout << "Is magazines: " << magezines(str1, str2) << endl;
+
+}
+
+void test_stack(){
+    string str = "[";
+    cout << "Valid buckets: " << effective_buckets(str) << endl;
+
+    string temp_str = "abbaccddfeefhij";
+    string res_str = delete_near_word(temp_str);
+    cout << "res: " << res_str << endl;
+
+    string s = "34*2/";
+    cout << "polan res: " << PolanExpression(s) << endl;
+
+    vector<int> arr = {4, 5, 1, 2, 3};
+
 }
 
 
@@ -105,6 +125,40 @@ void test_vector(){
 
     vector<vector<int>> spiral = spiral_array(6, 6);
     Print_two_vec_int(spiral);
+
+}
+
+void test_tree(){
+    vector<int> arr = {4, 2, 3, 1, 5, 7, 8, 6};
+    TreeNode *root = CreateSearchTree(arr);
+    vector<int> in_arr;
+    vector<int> pre_arr;
+    vector<int> post_arr;
+
+    Inorder(root, in_arr);
+    Preorder(root, pre_arr);
+    PostOrder(root, post_arr);
+
+    cout << "lever: " << endl;
+    leverorder(root);
+
+    cout << "in_arr: " << endl;
+    Print_vec_int(in_arr);
+    cout  << "pre_arr: " << endl;
+    Print_vec_int(pre_arr);
+    cout << "post_arr: " << endl;
+    Print_vec_int(post_arr);
+
+
+    TreeNode *temp_root = rebuilt_tree(in_arr, pre_arr);
+    cout << "next lever: " << endl;
+    leverorder(temp_root);
+
+    TreeNode *temp_root_2 = rebuilt_tree_other(in_arr, post_arr);
+    cout << "two lever: " << endl;
+    leverorder(temp_root_2);
+
+
 
 
 }

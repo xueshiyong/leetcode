@@ -50,13 +50,19 @@ void InsertTreeNode(TreeNode *&root, int x);
 TreeNode *CreateSearchTree(vector<int> &arr);
 TreeNode *CreateBiTree(vector<int> &arr, int index);
 
-// 中序输出树
 void Inorder(TreeNode *root);
-// 层序输出树
+void PostOrder(TreeNode *root);
 void leverorder(TreeNode *root);
-// 栈输出树
 void preorderval(TreeNode *root);
 void preorder_travesal(TreeNode *root);
+
+void Inorder(TreeNode *root, vector<int> &in_arr); // 中序
+void Preorder(TreeNode *root, vector<int> &pre_arr); // 前序
+void PostOrder(TreeNode *root, vector<int> &post_arr); // 后序
+
+// 树的特点
+TreeNode *rebuilt_tree(vector<int> &in_arr, vector<int> &pre_arr);
+TreeNode *rebuilt_tree_other(vector<int> &in_arr, vector<int> &post_arr);
 
 // 测试函数
 void testing_list();
@@ -64,6 +70,8 @@ void testing_back_search();
 void test_dynamic();
 void test_vector();
 void test_hash();
+void test_stack();
+void test_tree();
 
 // 单向链表相关函数
 ListNode *CreateList(vector<int> &arr);
@@ -90,6 +98,16 @@ bool IsoWords(string s1, string s2);
 vector<int> cross_arr(vector<int> &arr1, vector<int> &arr2);
 int sum_bits(int n);
 bool isHappy(int n);
+bool magezines(string str1, string str2);
+
+
+// 栈和队列
+
+bool effective_buckets(string &str);
+string delete_near_word(string &str);
+int PolanExpression(string &str);
+vector<int> max_slide_window_arr(vector<int> &arr, int k);
+
 
 
 // 矩阵算法题目
