@@ -39,6 +39,12 @@ int binary_search(vector<int> &arr, int target);
 int removeVal(vector<int> &arr, int val);
 vector<int> square_of_nums(vector<int> &arr);
 int min_len_arr(vector<int> &arr, int target);
+
+vector<vector<int>> spiral_array(int m, int n);
+
+
+
+
 // 创建树
 void InsertTreeNode(TreeNode *&root, int x);
 TreeNode *CreateSearchTree(vector<int> &arr);
@@ -57,6 +63,8 @@ void testing_list();
 void testing_back_search();
 void test_dynamic();
 void test_vector();
+void test_hash();
+
 // 单向链表相关函数
 ListNode *CreateList(vector<int> &arr);
 ListNode *add_list(ListNode *head, ListNode *node, int pos); //链表添加新的节点
@@ -75,6 +83,14 @@ ListNode *get_tail(ListNode *head);
 ListNode *two_sum_of_list(ListNode *head1, ListNode *head2);
 ListNode *reverse_list(ListNode *head);
 ListNode *list_cross_node(ListNode *head1, ListNode *head2);
+ListNode *swap_near_node(ListNode *head);
+
+// 哈希表
+bool IsoWords(string s1, string s2);
+vector<int> cross_arr(vector<int> &arr1, vector<int> &arr2);
+int sum_bits(int n);
+bool isHappy(int n);
+
 
 // 矩阵算法题目
 typedef vector<vector<char>> char_Martix;

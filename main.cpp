@@ -7,5 +7,7 @@
 
 int main(){
     cout << "hello world. " << endl;
-    testing_list();
+//    test_vector();
+//    testing_list();
+    test_hash();
 }

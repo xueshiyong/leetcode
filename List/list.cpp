@@ -310,3 +310,21 @@ ListNode *list_cross_node(ListNode *head1, ListNode *head2) {
 
     return nullptr;
 }
+
+ListNode *swap_near_node(ListNode *head){
+    ListNode *dummy = new ListNode(INT32_MAX);
+    dummy->next = head;
+
+    ListNode *cur = dummy;
+    while (cur->next != nullptr and cur->next->next != nullptr){
+        ListNode *temp1 = cur->next;
+        ListNode *temp2 = cur->next->next->next;
+
+        cur->next = cur->next->next;
+        cur->next->next = temp1;
+        cur->next->next->next = temp2;
+
+        cur = cur->next->next;
+    }
+    return dummy->next;
+}

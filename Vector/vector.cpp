@@ -95,23 +95,78 @@ int arr_sum(vector<int> &arr, int start, int end){
 
 // 滑动窗口 起点和终点的不断移动过程,
 int min_len_arr(vector<int> &arr, int target){
-    int size = arr.size();
     int sum = 0;
+    int min_len = INT32_MAX;
     int i = 0;
-    int res = INT32_MAX;
-    for (int j = 0; j < size; j++){
+    for (int j = 0; j < arr.size(); j++){
         sum += arr[j];
         while (sum >= target){
             int temp = j - i + 1;
-            if (temp < res){
-                res = temp;
+            if (temp < min_len){
+                min_len = temp;
             }
             sum -= arr[i];
             i++;
         }
     }
+    return min_len;
+}
+
+// 螺旋矩阵
+vector<vector<int>> spiral_array(int m, int n){
+    vector<vector<int>>res(m, vector<int> (n, 0));
+    int count = 1;
+    int n_count = m * n;
+
+    int i = 0;
+    int j = 0;
+    int temp_low = 0;
+    int temp_n = n;
+    int temp_m = m;
+
+    if ((n * m) % 2 == 1){
+        n_count--;
+    }
+
+    while (count <= n_count){
+        while (j < temp_n - 1){
+            res[i][j] = count;
+            count++;
+            j++;
+        } // right
+
+        while (i < temp_m - 1){
+            res[i][j] = count;
+            count++;
+            i++;
+        } // down
+
+        while (j > temp_low){
+            res[i][j] = count;
+            count++;
+            j--;
+        } // left
+
+        while (i > temp_low){
+            res[i][j] = count;
+            count++;
+            i--;
+        } // up
+
+        temp_low++;
+        temp_m--;
+        temp_n--;
+        i++;
+        j++;
+    }
+
+    if ((n * m) % 2 == 1){
+        res[i][j] = n * m;
+    }
+
     return res;
 }
+
 
 pair<int, int> two_sum(vector<int> &arr, int target){
     unordered_map<int, int> umap;

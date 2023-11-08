@@ -23,10 +23,27 @@ void testing_list(){
 
     cout << "cross node: " << list_cross_node(head, node1)->val << endl;
 
-
+    ListNode *temp_head = swap_near_node(head);
+    PrintList(temp_head);
 
 
 }
+
+void test_hash(){
+    string s1 = "AHFGijkg";
+    string s2 = "iAFGHbgj";
+    cout << "is Iso Words: " << IsoWords(s1, s2) << endl;
+
+    vector<int> arr1 = {1, 4, 4, 2, 3, 6, 5};
+    vector<int> arr2 = {4, 4, 3, 6};
+    vector<int> res = cross_arr(arr2, arr1);
+    Print_vec_int(res);
+
+    cout << "sum bits: " << sum_bits(82) << endl;
+    int n = 19;
+    cout << "Is happy? " << isHappy(n) << endl;
+}
+
 
 void testing_back_search(){
     vector<int> arr = {4, 3, 1, 6};
@@ -84,6 +101,10 @@ void test_vector(){
 
     vector<int> temp_arr2 = {2, 3, 1, 2, 4, 3};
     cout << "min_len_arr: " << min_len_arr(temp_arr2, 9) << endl;
+
+
+    vector<vector<int>> spiral = spiral_array(6, 6);
+    Print_two_vec_int(spiral);
 
 
 }
