@@ -4,7 +4,8 @@
 
 #ifndef LEETCODE_MATH_FUN_H
 #define LEETCODE_MATH_FUN_H
-#include "func.h"
+//#include "func.h"
+#include "../func.h"
 
 using namespace std;
 

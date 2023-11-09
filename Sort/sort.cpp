@@ -1,7 +1,7 @@
 //
 // Created by 24195 on 2023/11/6.
 //
-#include "func.h"
+#include "../func.h"
 
 void BobbleSort(vector<int> &arr){
     int size = arr.size();

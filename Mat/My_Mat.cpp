@@ -2,7 +2,7 @@
 // Created by 24195 on 2023/10/31.
 //
 
-#include "func.h"
+#include "../func.h"
 //
 // Created by 24195 on 2023/10/27.
 //

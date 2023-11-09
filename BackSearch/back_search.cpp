@@ -2,7 +2,7 @@
 // Created by 24195 on 2023/10/30.
 //
 
-#include "func.h"
+#include "../func.h"
 vector<string> digits = {"__", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
 
 bool IsValid(int row, int col, char_Martix chess){

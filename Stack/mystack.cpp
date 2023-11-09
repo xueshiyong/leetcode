@@ -2,7 +2,7 @@
 // Created by 24195 on 2023/11/8.
 //
 
-#include "func.h"
+#include "../func.h"
 
 bool effective_buckets(string &str){
     stack<char> st;

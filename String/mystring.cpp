@@ -2,7 +2,7 @@
 // Created by 24195 on 2023/11/7.
 //
 
-#include "func.h"
+#include "../func.h"
 
 bool IsPanic(string s, int start, int end){
     int i = start;

@@ -1,7 +1,7 @@
 //
 // Created by 24195 on 2023/11/7.
 //
-#include "func.h"
+#include "../func.h"
 
 void testing_list(){
     cout << "testing list: " << endl;
@@ -129,43 +129,7 @@ void test_vector(){
 }
 
 void test_tree(){
-    vector<int> arr = {4, 2, 3, 1, 5, 7, 8, 6};
-    TreeNode *root = CreateSearchTree(arr);
-    vector<int> in_arr;
-    vector<int> pre_arr;
-    vector<int> post_arr;
-
-    Inorder(root, in_arr);
-    Preorder(root, pre_arr);
-    PostOrder(root, post_arr);
-
-    cout << "lever: " << endl;
-    leverorder(root);
-
-    cout << "in_arr: " << endl;
-    Print_vec_int(in_arr);
-    cout  << "pre_arr: " << endl;
-    Print_vec_int(pre_arr);
-    cout << "post_arr: " << endl;
-    Print_vec_int(post_arr);
-
-
-    TreeNode *temp_root = rebuilt_tree(in_arr, pre_arr);
-    cout << "next lever: " << endl;
-    leverorder(temp_root);
-
-    TreeNode *temp_root_2 = rebuilt_tree_other(in_arr, post_arr);
-    cout << "two lever: " << endl;
-    leverorder(temp_root_2);
-
-    vector<int> path;
-    vector<vector<int>> res;
-    int target = 9;
-    path_sum_tree(root, target, path, res);
-    cout << "res: " << endl;
-    Print_two_vec_int(res);
-
-
-
+    cout << "this is test tree: " << endl;
 
 }
+

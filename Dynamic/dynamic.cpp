@@ -1,7 +1,7 @@
 //
 // Created by 24195 on 2023/11/7.
 //
-#include "func.h"
+#include "../func.h"
 
 int map_path(int rows, int cols){
     vector<vector<int>> dp(rows, vector<int>(cols, 1));

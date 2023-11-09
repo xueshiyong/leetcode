@@ -2,7 +2,7 @@
 // Created by 24195 on 2023/10/31.
 //
 
-#include "func.h"
+#include "../func.h"
 
 int allocate_cookies(vector<int> children, vector<int> cookies){ // 能偶满足孩子胃口的饼干数
     sort(children.begin(), children.end());

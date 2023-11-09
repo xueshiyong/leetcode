@@ -3,7 +3,7 @@
 //
 
 #include "math_fun.h"
-#include "func.h"
+#include "../func.h"
 
 
 double fun_n(double xx, Vector Coeffs){
