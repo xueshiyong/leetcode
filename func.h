@@ -64,7 +64,25 @@ void PostOrder(TreeNode *root, vector<int> &post_arr); // 后序
 TreeNode *rebuilt_tree(vector<int> &in_arr, vector<int> &pre_arr);
 TreeNode *rebuilt_tree_other(vector<int> &in_arr, vector<int> &post_arr);
 
-void path_sum_tree(TreeNode *root, int target, vector<int> &path, vector<vector<int>> &res);
+int get_max_depth(TreeNode *root); // 树的深度
+bool compare(TreeNode *left, TreeNode *right);
+bool IsSym(TreeNode *root);
+TreeNode *inverse_tree(TreeNode *root);
+TreeNode* inverse_tree_sal(TreeNode *root);
+TreeNode *lever_inverse_tree(TreeNode *root);
+
+bool que_is_sym(queue<TreeNode *> que);
+bool lever_is_Sym(TreeNode *root);
+
+int get_min_depth(TreeNode *root);
+int lever_get_min_depth(TreeNode *root);
+int nums_of_root(TreeNode *root);
+void total_root_path(TreeNode *root, vector<int> &path, vector<vector<int>> &res);
+int lever_sum_left_grass(TreeNode *root);
+void sum_left_grass(TreeNode *root, int &sum);
+TreeNode *bulid_max_tree(vector<int> arr);
+
+
 
 // 测试函数
 void testing_list();
