@@ -229,3 +229,27 @@ TreeNode *rebuilt_tree_other(vector<int> &in_arr, vector<int> &post_arr){
 
 }
 
+int vec_sum(vector<int> &arr){
+    int sum = 0;
+    for (int i = 0; i < arr.size(); i++){
+        sum += arr[i];
+    }
+    return sum;
+}
+
+void path_sum_tree(TreeNode *root, int target, vector<int> &path, vector<vector<int>> &res){
+    if (root == nullptr){
+        if (vec_sum(path) == target){
+            res.push_back(path);
+        }
+        return;
+    }
+
+    path.push_back(root->val);
+    path_sum_tree(root->left, target, path, res);
+    path_sum_tree(root->right, target, path, res);
+    path.pop_back();
+
+
+
+}

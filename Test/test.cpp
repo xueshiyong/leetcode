@@ -158,6 +158,13 @@ void test_tree(){
     cout << "two lever: " << endl;
     leverorder(temp_root_2);
 
+    vector<int> path;
+    vector<vector<int>> res;
+    int target = 9;
+    path_sum_tree(root, target, path, res);
+    cout << "res: " << endl;
+    Print_two_vec_int(res);
+
 
 
 

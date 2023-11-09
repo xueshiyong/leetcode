@@ -60,9 +60,11 @@ void Inorder(TreeNode *root, vector<int> &in_arr); // 中序
 void Preorder(TreeNode *root, vector<int> &pre_arr); // 前序
 void PostOrder(TreeNode *root, vector<int> &post_arr); // 后序
 
-// 树的特点
+// 树函数
 TreeNode *rebuilt_tree(vector<int> &in_arr, vector<int> &pre_arr);
 TreeNode *rebuilt_tree_other(vector<int> &in_arr, vector<int> &post_arr);
+
+void path_sum_tree(TreeNode *root, int target, vector<int> &path, vector<vector<int>> &res);
 
 // 测试函数
 void testing_list();
