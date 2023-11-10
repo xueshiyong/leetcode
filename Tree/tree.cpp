@@ -655,6 +655,131 @@ int min_absolute_diff_sal(TreeNode *root){
 
 }
 
-TreeNode *merge_root(TreeNode *root1, TreeNode *root2){
+void get_umap_mode_of_root(TreeNode *root, unordered_map<int, int> &umap){ // umap.first val, umap.second frequence
+    if (root == nullptr){
+        return;
+    }
+    umap[root->val]++;
+    get_umap_mode_of_root(root->left, umap);
+    get_umap_mode_of_root(root->right, umap);
+}
 
+bool static cmp(pair<int, int> &a, pair<int, int> &b){
+    return a.second > b.second;
+}
+
+vector<int> mode_of_root(TreeNode *root){
+    unordered_map<int, int> umap;
+    get_umap_mode_of_root(root, umap);
+    vector<pair<int, int>> vec(umap.begin(), umap.end());
+    sort(vec.begin(), vec.end(), cmp);
+
+    vector<int> res;
+    res.push_back(vec[0].first); // vec 表示的是众数，以及众数的频率
+
+    for (int i = 1; i < vec.size(); i++){
+        if (vec[i].second == vec[0].second){
+            res.push_back(vec[i].first);
+        }
+    }
+
+    return res;
+}
+
+TreeNode *low_ancestor_node(TreeNode *root, int p, int q){
+    if (root == nullptr or root->val == p or root->val == q){
+        return root;
+    }
+
+    TreeNode *left = low_ancestor_node(root->left, p, q);
+    TreeNode *right = low_ancestor_node(root->right, p, q);
+
+    if (left == nullptr and right == nullptr){
+        return nullptr;
+    }
+
+    if (left != nullptr and right == nullptr){
+        return left;
+    }
+
+    if (left == nullptr and right != nullptr){
+        return right;
+    }
+
+    if (left != nullptr and right != nullptr){
+        return root;
+    }
+
+}
+
+void insert_Search_tree(TreeNode *&root, int val){
+    if (root == nullptr){
+        root = new TreeNode(val);
+        return;
+    }
+
+    if (val == root->val){
+        return;
+    }
+
+    if (val < root->val){
+        insert_Search_tree(root->left, val);
+    }
+    if (val > root->val){
+        insert_Search_tree(root->right, val);
+    }
+}
+
+TreeNode *insertNode(TreeNode *root, int val){
+    if (root == nullptr){
+        root = new TreeNode(val);
+    }
+    if (val < root->val){
+        TreeNode *left = insertNode(root->left, val);
+        root->left = left; // 插入左边的节点
+    }
+    if (val > root->val){
+        TreeNode *right = insertNode(root->right, val);
+        root->right = right; //插入右边的节点
+    }
+
+    return root;
+}
+
+TreeNode *create_search_tree(vector<int> arr){
+    TreeNode *root = nullptr;
+    for (int i = 0; i < arr.size(); i++){
+        root = insertNode(root, arr[i]);
+    }
+    return root;
+}
+
+
+TreeNode *merge_root(TreeNode *root1, TreeNode *root2){
+    // 返回条件
+    if (root1 == nullptr and root2 == nullptr){
+        return nullptr;
+    }
+
+    if (root1 != nullptr and root2 == nullptr){
+        root1->val = root1->val;
+        return root1;
+    }
+
+    if (root1 == nullptr and root2 != nullptr){
+        root1 = new TreeNode(root2->val);
+        return root1;
+    }
+
+    root1->val = root1->val + root2->val; // 中
+
+    if (root1->left != nullptr or root2->left != nullptr){
+        root1->left = merge_root(root1->left, root2->left);
+    } // 左
+
+    if (root1->right != nullptr or root2->right != nullptr){
+        root1->right = merge_root(root1->right, root2->right);
+    } // 右
+
+    return root1;
 }

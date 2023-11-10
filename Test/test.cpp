@@ -126,30 +126,23 @@ void test_vector(){
     vector<vector<int>> spiral = spiral_array(6, 6);
     Print_two_vec_int(spiral);
 
-
-
 }
 
 void test_tree(){
     cout << "this is test tree: " << endl;
-    vector<int> arr = {4, 2, 3, 1, 5, 7, 6, 9, 8};
-    TreeNode *root = CreateSearchTree(arr);
-    TreeNode *bi_root = CreateBiTree(arr, 0);
-    cout << "lever order: " << endl;
+    vector<int> arr1 = {1, 3, 2, 5};
+    vector<int> arr2 = {2, 1, 3, '#', 4, '#', 7};
+    TreeNode *root1 = CreateBiTree(arr1, 0);
+    TreeNode *root2 = CreateBiTree(arr2, 0);
+
+    cout << "lever1: " << endl;
+    leverorder(root1);
+    cout << "lever2: " << endl;
+    leverorder(root2);
+    cout << "lever: " << endl;
+    TreeNode *root = merge_root(root1, root2);
     leverorder(root);
-    cout << "Inorder: " << endl;
-    Inorder(root);
-    cout << endl;
-    TreeNode *temp_root = find_tree_val_sal(root, 7);
-    cout << "leverorder: " << endl;
-    leverorder(temp_root);
 
-    TreeNode *temp_root_2 = find_search_tree_val(root, 7);
-    cout << "next lever: " << endl;
-    leverorder(temp_root_2);
 
-    cout << "Is Search: " << Is_Search_Tree(bi_root) << endl;
-    cout << "min value: " << endl;
-    cout << min_absolute_diff(bi_root) << endl;
 }
 
