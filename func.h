@@ -49,6 +49,7 @@ vector<vector<int>> spiral_array(int m, int n);
 void InsertTreeNode(TreeNode *&root, int x);
 TreeNode *CreateSearchTree(vector<int> &arr);
 TreeNode *CreateBiTree(vector<int> &arr, int index);
+TreeNode *create_search_tree(vector<int> arr);
 
 void Inorder(TreeNode *root);
 void PostOrder(TreeNode *root);
@@ -84,9 +85,15 @@ TreeNode *bulid_max_tree(vector<int> arr);
 TreeNode *find_search_tree_val(TreeNode *root, int val);
 TreeNode *find_tree_val_sal(TreeNode *root, int val);
 bool Is_Search_Tree(TreeNode *root);
+void insert_Search_tree(TreeNode *&root, int val);
+TreeNode *merge_root(TreeNode *root1, TreeNode *root2);
 
-int min_absolute_diff(TreeNode *root); // 二叉搜索树的最小绝对差
+
 int min_absolute_diff_sal(TreeNode *root);
+
+vector<int> mode_of_root(TreeNode *root); //二叉树的众数, 利用unorder_map进行存储数字的名称和数字的个数
+
+TreeNode *low_ancestor_node(TreeNode *root, int p, int q);
 
 
 
