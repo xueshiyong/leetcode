@@ -81,6 +81,12 @@ void total_root_path(TreeNode *root, vector<int> &path, vector<vector<int>> &res
 int lever_sum_left_grass(TreeNode *root);
 void sum_left_grass(TreeNode *root, int &sum);
 TreeNode *bulid_max_tree(vector<int> arr);
+TreeNode *find_search_tree_val(TreeNode *root, int val);
+TreeNode *find_tree_val_sal(TreeNode *root, int val);
+bool Is_Search_Tree(TreeNode *root);
+
+int min_absolute_diff(TreeNode *root); // 二叉搜索树的最小绝对差
+int min_absolute_diff_sal(TreeNode *root);
 
 
 

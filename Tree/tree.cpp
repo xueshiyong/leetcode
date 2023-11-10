@@ -99,6 +99,7 @@ void leverorder(TreeNode *root){
         }
         cout << endl;
     }
+    cout << endl;
 }
 
 
@@ -551,6 +552,107 @@ TreeNode *bulid_max_tree(vector<int> arr) {
     root->right = bulid_max_tree(right_arr);
 
     return root;
+}
+
+TreeNode *find_search_tree_val(TreeNode *root, int val){
+    if (root->val == val or root == nullptr){
+        return root;
+    }
+
+    TreeNode *res = nullptr;
+    if (val < root->val){
+        res = find_search_tree_val(root->left, val);
+    }
+    if (val > root->val){
+        res = find_search_tree_val(root->right, val);
+    }
+
+    return res;
+}
+
+TreeNode *find_tree_val_sal(TreeNode *root, int val){
+    if (root == nullptr){
+        return nullptr;
+    }
+
+    queue<TreeNode *> que;
+    que.push(root);
+
+    while (!que.empty()){
+        int size = que.size();
+        for (int i = 0; i < size; i++){
+            TreeNode *node = que.front();
+            que.pop();
+
+            if (node->val == val){
+                return node;
+            }
+
+            if (node->left){
+                que.push(node->left);
+            }
+
+            if (node->right){
+                que.push(node->right);
+            }
+
+        }
+    }
+    cout << endl;
+    return nullptr;
+}
+
+bool Is_Search_Tree(TreeNode *root){
+    vector<int> res;
+    Inorder(root, res);
+    for (int i = 1; i < res.size(); i++){
+        if (res[i] < res[i-1]){
+            return false;
+        }
+    }
+    return true;
+}
+
+int abs_value(int a, int b){
+    if (a > b){
+        return a - b;
+    }
+    else{
+        return b - a;
+    }
+}
+
+
+int min_absolute_diff_sal(TreeNode *root){
+    if (root == nullptr){
+        return -1;
+    }
+
+    int min_value = INT32_MAX;
+    int left_value;
+    int right_value;
+    queue<TreeNode *> que;
+    que.push(root);
+    while (!que.empty()){
+        int size = que.size();
+        for (int i = 0; i < size; i++){
+            TreeNode *node = que.front();
+            que.pop();
+
+            if (node->left){
+                left_value = abs_value(node->val, node->left->val);
+                que.push(node->left);
+            }
+
+            if(node->right){
+                right_value = abs_value(node->val, node->right->val);
+            }
+
+            min_value = min(min_value, min(left_value, right_value));
+        }
+    }
+    return min_value;
+
 }
 
 TreeNode *merge_root(TreeNode *root1, TreeNode *root2){
