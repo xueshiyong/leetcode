@@ -232,7 +232,9 @@ int V_bags_two(vector<int> &weights, vector<int> &prices, int Volume);
 int left_min_stone(vector<int> &stones);
 bool IsValidOperator(vector<int> &arr, int target);
 int split_max_int(int n);
-
+int absolute_bags(vector<int> &weights, vector<int> &prices, int Volume);
+int coins_change(vector<int> &coins, int amount); // 完全背包
+int sum_of_combination(vector<int> &nums, int target);
 
 // 输出
 void PrintCircleList(ListNode *head);

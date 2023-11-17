@@ -170,5 +170,41 @@ int split_max_int(int n){
     return dp[n];
 }
 
+int absolute_bags(vector<int> &weights, vector<int> &prices, int Volume){
+    int m = weights.size();
+    int n = Volume + 1;
 
+    vector<int> dp(n, 0);
+    for (int i = 0; i < m; i++){
+        for (int j = weights[i]; j < n; j++){
+            dp[j] = max(dp[j], dp[j - weights[i]] + prices[i]);
+        }
+    }
+    return dp[n - 1];
+}
 
+int coins_change(vector<int> &coins, int amount){
+    vector<int> dp(amount + 1, 0);
+    dp[0] = 1;
+    for (int i = 0; i < coins.size(); i++){
+        for (int j = coins[i]; j <= amount; j++){
+            dp[j] += dp[j - coins[i]];
+        }
+    }
+    return dp[amount];
+
+}
+
+// 先遍历目标，再遍历数组，那么就有排列的方式
+int sum_of_combination(vector<int> &nums, int target){
+    vector<int> dp(target + 1, 0);
+    dp[0] = 1;
+    for (int j = 0; j < target + 1; j++){
+        for (int i = 0; i < nums.size(); i++){
+            if (j >= nums[i]){
+                dp[j] += dp[j - nums[i]];
+            }
+        }
+    }
+    return dp[target];
+}

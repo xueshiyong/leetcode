@@ -6,7 +6,7 @@
 
 int main(){
     cout << "hello world. " << endl;
-    test_tree();
-//    testing_back_search();
+    test_dynamic();
+
 }
 
